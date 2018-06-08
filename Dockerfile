@@ -5,7 +5,7 @@ WORKDIR "/home/docker/eshop"
 RUN apt-get update && apt-get -y upgrade
 
 # Install curl
-RUN apt-get -y install curl ruby-full
+RUN apt-get -y install curl ruby-full gnupg
 
 # Install scss-lint
 RUN gem install scss_lint
