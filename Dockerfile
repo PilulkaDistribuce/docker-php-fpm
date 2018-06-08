@@ -2,8 +2,13 @@ FROM php:7.1-fpm
 
 WORKDIR "/home/docker/eshop"
 
+RUN apt-get update && apt-get -y upgrade
+
 # Install curl
-RUN apt-get -y install curl
+RUN apt-get -y install curl ruby-full
+
+# Install scss-lint
+RUN gem install scss_lint
 
 # Update sources list
 RUN curl -sL https://deb.nodesource.com/setup_8.x | bash -
@@ -11,7 +16,6 @@ RUN curl -sS https://dl.yarnpkg.com/debian/pubkey.gpg | apt-key add -
 RUN echo "deb https://dl.yarnpkg.com/debian/ stable main" | tee /etc/apt/sources.list.d/yarn.list
 
 # Upgrade
-RUN apt-get update && apt-get -y upgrade
 RUN apt-get install -y apt-utils
 
 # Install additional sofware
