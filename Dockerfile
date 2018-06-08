@@ -31,7 +31,7 @@ RUN npm install gulp-util
 RUN apt-get install -y \
     libfreetype6-dev \
     libjpeg62-turbo-dev \
-    libpng12-dev \
+    libpng-dev \
     libmcrypt-dev \
     libxml2-dev \
     && docker-php-ext-install pdo pdo_mysql mbstring gd iconv mcrypt zip xml
